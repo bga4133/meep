@@ -1,0 +1,115 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background:#f9f5f5;
+}
+
+.filtersGrid{
+    width: 100%;
+    background: #f9f5f5;
+    padding: 20px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filtersGrid button{
+    font-family: 'Poppins';
+    width: 10%;
+    border: none;
+    font-size: 20px;
+    border-radius: 7px;
+    background-color: #e91e63;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.10), 0 4px 4px rgba(146, 133, 133, 0.1);
+    height: 7vh;
+    margin: 5px;
+}
+.filtersGrid button:nth-child(2){
+    background: #ffc107;
+}
+.filtersGrid button:nth-child(3){
+    background:#4caf50;
+}
+.filtersGrid button:nth-child(4){
+    background:#2196f3;
+}
+.logo{
+    width: 70px;
+    height: auto;
+}
+.divGrid{
+    width: 100%;
+    padding: 10px;
+    background:#f9f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    font-family: 'Poppins';
+}
+.itemGrid{
+    width: 18%;
+    height: auto;
+    border-radius: 20px;
+    background: white;
+    padding: 25px;
+    margin: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.10), 0 4px 4px rgba(146, 133, 133, 0.1);
+    font-size: 'roboto';
+}
+.flexItems,.flexItemsubicacion{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.flexItemsubicacion{
+    align-items: flex-start;
+    flex-direction: column;
+}
+.flexItems li,.flexItemsubicacion li{
+    list-style: none;
+}
+
+
+.color1,.color2,.color3,.battery{
+    background: #ffc107;
+    padding: 3px;
+    border-radius: 7px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.10), 0 4px 4px rgba(146, 133, 133, 0.1);
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+.color2{
+    background:#4caf50;
+}
+.color3{
+    background:#2196f3;
+}
+.battery{
+    background: #f44336;
+}
+
+@media (max-width: 1200px){
+    .filtersGrid{
+        width: 90%;
+        justify-content: space-between;
+    }
+    .filtersGrid button{
+        width: auto;
+        padding: 10px;
+    }
+    .divGrid{
+        width: 100%;
+        flex-direction: column;
+        padding: 0;
+    }
+    .itemGrid{
+        width: 80%;
+    }
+}
