@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Logo1  from '../images/logo.png'
 import styled from 'styled-components'
 
-
+// styled component
 const HeaderComponent = styled.header`
     background-color:#ffc107;
     width:100%;
