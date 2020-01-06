@@ -2,21 +2,23 @@ import React, { Component } from 'react'
 import axios from 'axios'
 export default class Grid extends Component {
 
+    // initial state
     state = {
         resources: [],
         filter: 0
     }
-
+    // get data from api
     getResources = async () => {
         const res = await axios.get('https://apidev.meep.me/tripplan/api/v1/routers/lisboa/resources?lowerLeftLatLon=38.711046,-9.160096&upperRightLatLon=38.739429,-9.137115&companyZoneIds=545,467,473');
+        // sent data to state
         this.setState({ resources: res.data});
     }
-
+    // onClick event for show data
     onClick = e => {
         e.preventDefault();
         this.getResources();
     }
-
+    // getBatteryLevel Function 
     getBatteryLevel(batteryLevel){
         if(batteryLevel > 30){
                 return <div className="color2">{batteryLevel}</div>;
@@ -24,7 +26,7 @@ export default class Grid extends Component {
             return <div className="battery">{batteryLevel}</div>;
         }
     }
-
+    // get color div function
     getColorDiv(companyZoneId){
         switch (companyZoneId) {
             case 545:
@@ -40,17 +42,21 @@ export default class Grid extends Component {
     }
 
     render() {
+        // destruncting state
         const {resources,filter} = this.state;
         return (
             <aside>
                 <div className="filtersGrid">
+                    {/* filters buttons with events */}
                     <button onClick={(e) => { this.onClick(e); this.setState({filter:0});}}>Show</button>
                     <button onClick={() => this.setState({filter: 545})}>by 545</button>
                     <button onClick={() => this.setState({filter: 467})}>467</button>
                     <button onClick={() => this.setState({filter: 473})}>473</button>
                 </div>  
                 <div className="divGrid">
+                    {/* loading resource */}
                     {!resources.length && <span>Loading...</span>}
+                    {/* map and filter show */}
                     {resources.length && filter
                         ? resources
                         .filter(resources => resources.companyZoneId === filter)
